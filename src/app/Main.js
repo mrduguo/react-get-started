@@ -17,7 +17,7 @@ import CSSModules from 'react-css-modules';
 
 const AppBarExampleIconRaw = () => (
   <AppBar
-    title="Cloud Starterx"
+    title="Cloud Starter"
     iconClassNameRight="muidocs-icon-navigation-expand-more"
     styleName='appBar'
   />
@@ -25,13 +25,13 @@ const AppBarExampleIconRaw = () => (
 
 const AppBarExampleIcon=CSSModules(AppBarExampleIconRaw, appStyle);
 
-const CardExampleExpandable = () => (
+const CardExampleExpandableRaw = () => (
   <Card>
     <CardHeader
       title="Standalone"
     />
     <CardActions>
-      <FlatButton label="Start" />
+      <FlatButton label="Start" styleName='appBar2'/>
     </CardActions>
     <CardText>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -45,6 +45,10 @@ const CardExampleExpandable = () => (
     </CardText>
   </Card>
 );
+
+
+const CardExampleExpandable=CSSModules(CardExampleExpandableRaw, appStyle);
+
 const CardExampleExpandable2 = () => (
   <Card>
     <CardHeader

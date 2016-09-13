@@ -49,7 +49,6 @@ build/
 .rvmrc
 ### Sass template
 .sass-cache/
-*.css.map
 ### Maven template
 target/
 pom.xml.tag
