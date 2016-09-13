@@ -12,14 +12,19 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import AppBar from 'material-ui/AppBar';
+import appStyle from './Main.scss';
+import CSSModules from 'react-css-modules';
 
-const AppBarExampleIcon = () => (
+const AppBarExampleIconRaw = () => (
   <AppBar
-    title="Cloud Starter"
+    title="Cloud Starterx"
     iconClassNameRight="muidocs-icon-navigation-expand-more"
-    style={{position: 'fixed', top: 0}}
+    styleName='appBar'
   />
 );
+
+const AppBarExampleIcon=CSSModules(AppBarExampleIconRaw, appStyle);
+
 const CardExampleExpandable = () => (
   <Card>
     <CardHeader
