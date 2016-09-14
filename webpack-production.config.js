@@ -7,13 +7,19 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
   devtool: 'source-map',
-  entry: [path.join(__dirname, '/src/app/app.js')],
+  entry: [path.join(__dirname, '/src/index.js')],
   module: {
     loaders: [
       {
         test: /\.js$/,
         loaders: ['babel-loader'],
         exclude: [path.resolve(__dirname, 'node_modules')],
+      }, {
+        test: /\.png$/,
+        loader: "url-loader?limit=1&name=files/[hash].[ext]"
+      }, {
+        test: /\.(eot|ttf|woff(2)?)/,
+        loader: 'file-loader?name=files/[hash].[ext]'
       }, {
         test: /(\.scss|\.css)$/,
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=_[hash:base64:5]!postcss!sass?sourceMap')
@@ -30,7 +36,7 @@ const config = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new ExtractTextPlugin('app.css', { allChunks: true }),
+    new ExtractTextPlugin('app.css', { allChunks: true}),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
@@ -39,6 +45,8 @@ const config = {
     new webpack.NoErrorsPlugin(),
     new TransferWebpackPlugin([
       {from: 'www'},
+    ], path.resolve(__dirname, 'src')),
+    new TransferWebpackPlugin([
       {from: 'deploy'},
     ], path.resolve(__dirname, 'src')),
   ],

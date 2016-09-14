@@ -16,7 +16,7 @@ const config = {
           "protocol": 'https:',
           "port": 443
         },
-        pathRewrite: {'^/api' : ''},
+        pathRewrite: {'^/api': ''},
         changeOrigin: true,
         secure: false
       }
@@ -25,7 +25,7 @@ const config = {
   entry: [
     'webpack/hot/dev-server',
     'webpack/hot/only-dev-server',
-    path.join(__dirname, '/src/app/app.js'),
+    path.join(__dirname, '/src/index.js'),
   ],
   module: {
     loaders: [
@@ -33,6 +33,12 @@ const config = {
         test: /\.js$/,
         loaders: ['react-hot', 'babel-loader'],
         exclude: [path.resolve(__dirname, 'node_modules')],
+      }, {
+        test: /\.png$/,
+        loader: "url-loader?limit=1000000"
+      }, {
+        test: /\.(eot|ttf|woff(2)?)/,
+        loader: 'file-loader'
       }, {
         test: /(\.scss|\.css)$/,
         loaders: ['style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]_[hash:base64:5]!postcss!sass?sourceMap']
