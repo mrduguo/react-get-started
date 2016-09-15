@@ -16,8 +16,8 @@ const Header=() => (
     title="AIA Cloud - Starter"
     styleName='appBar'
     // iconElementLeft={<Logo/>}
-    iconElementLeft={<a href="/"><IconButton><FileCloud/></IconButton></a>}
-    iconElementRight={<FlatButton label="Docs" />}
+    iconElementLeft={<IconButton href="/"><FileCloud/></IconButton>}
+    iconElementRight={<FlatButton label="Docs" href="/"/>}
   />
 )
 
