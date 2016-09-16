@@ -4,6 +4,7 @@ import CSSModules from "react-css-modules"
 import styles from "./Deployments.scss"
 import TopologyBox from "./TopologyBox"
 import LocalDeployment from "./LocalDeployment"
+import RemoteDeployment from "./RemoteDeployment"
 
 
 const Deployments = () => (
@@ -14,13 +15,15 @@ const Deployments = () => (
             heading="Local Standalone"
             route="/standalone"
             img="images/css-framework.svg"
-        />
+        >
+            <LocalDeployment/>
+        </TopologyBox>
         <TopologyBox
             heading="Remote Cluster"
             route="/cluster"
             img="images/css-framework.svg"
         >
-            <LocalDeployment/>
+            <RemoteDeployment/>
         </TopologyBox>
     </div>
   </div>

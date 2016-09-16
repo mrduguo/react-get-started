@@ -14,14 +14,11 @@
   margin: 0px auto;
 }
 
-.deployment {
-  width:260px;
-  height: 300px;
-  float: left;
-  margin: 20px;
+.gridContent{
+  padding: 10px;
 }
 
-.title{
+.gridTitle{
   font-size: 20px;
   padding: 0px;
   margin: 0px;
@@ -31,4 +28,25 @@
   background-color: rgb(238, 238, 238);
   text-align: center;
   line-height: 64px;
+}
+.gridRequirements{
+  margin-bottom: 30px;
+  h4{
+    margin-bottom: 0;
+  }
+}
+
+.deployment {
+  width:260px;
+  height: 300px;
+  float: left;
+  margin: 20px;
+}
+
+.deploymentButton{
+  margin-right:20px;
+}
+
+.deploymentInProgress{
+  float:right;
 }

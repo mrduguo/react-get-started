@@ -3,7 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import CloudLocal from 'material-ui/svg-icons/file/cloud-download';
+import CloudRemote from 'material-ui/svg-icons/file/cloud-circle';
 import CmdStart from 'material-ui/svg-icons/av/play-arrow';
 import CmdStop from 'material-ui/svg-icons/av/stop';
 import CircularProgress from 'material-ui/CircularProgress';
@@ -16,7 +16,7 @@ import styles from "./Deployments.scss"
 class LocalDeployment extends React.Component {
     state = {
         open: false,
-        status: 'stopped',
+        status: 'started',
     };
 
     handleOpen = () => {
@@ -62,17 +62,17 @@ class LocalDeployment extends React.Component {
             <div>
                 <div styleName="gridContent">
                 <div>
-                    Start the cloud platform on any <b>docker</b> environment to have fun.
+                    Deploy the platform via <b>ansible</b> to one or more linux based clusters.
                 </div>
                     <div styleName="gridRequirements">
                         <h4>Requirements</h4>
                         <ul>
-                            <li>4GB available memory</li>
-                            <li>10GB free disk space</li>
+                            <li>ssh access</li>
+                            <li>python</li>
                         </ul>
                     </div>
-                    <RaisedButton primary={true} fullWidth={true} label="Run" onTouchTap={this.handleOpen}
-                                  icon={<CloudLocal/>}/>
+                    <RaisedButton primary={true} fullWidth={true} label="Configure" onTouchTap={this.handleOpen}
+                                  icon={<CloudRemote/>}/>
                 </div>
                 <Dialog
                     title="Local Standalone"
@@ -87,7 +87,7 @@ class LocalDeployment extends React.Component {
                                 <h2>Tab One</h2>
                                 <p>
                                     {loadingStatus()}
-                                    192.168.99.100<br/>
+                                    This is an example tab.<br/>
                                     This is an example tab.<br/>
                                     This is an example tab.<br/>
                                     This is an example tab.<br/>

@@ -25,7 +25,7 @@ var TopologyBox = React.createClass({
                 onMouseLeave={this.handleMouseLeave}
                 styleName="deployment"
             >
-                <h3 styleName="title">{this.props.heading}</h3>
+                <h3 styleName="gridTitle">{this.props.heading}</h3>
                 {this.props.children}
             </Paper>);
     }
