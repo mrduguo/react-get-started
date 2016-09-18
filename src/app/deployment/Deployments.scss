@@ -6,19 +6,22 @@
   font-size: 20px;
   line-height: 28px;
   letter-spacing: 0px;
-  color:rgba(0, 0, 0, 0.870588);
+  color: rgba(0, 0, 0, 0.870588);
 }
 
 .grid {
-  max-width:600px;
+  max-width: 600px;
   margin: 0px auto;
+  @media (max-width: 500px) {
+      max-width: 300px;
+  }
 }
 
-.gridContent{
+.gridContent {
   padding: 10px;
 }
 
-.gridTitle{
+.gridTitle {
   font-size: 20px;
   padding: 0px;
   margin: 0px;
@@ -29,24 +32,64 @@
   text-align: center;
   line-height: 64px;
 }
-.gridRequirements{
+
+.gridRequirements {
   margin-bottom: 30px;
-  h4{
+  h4 {
     margin-bottom: 0;
   }
 }
 
 .deployment {
-  width:260px;
+  width: 260px;
   height: 300px;
   float: left;
   margin: 20px;
 }
 
-.deploymentButton{
-  margin-right:20px;
+.deploymentButton {
+  margin-right: 20px;
 }
 
-.deploymentInProgress{
-  float:right;
+.localTab {
+  height: 200px;
+  h3 {
+    display: inline-table;
+    width: 100%;
+  }
+}
+
+.localResult {
+  height: 150px;
+}
+
+.code {
+  background-color: black;
+  color: #c3c1bc;
+  height: 100%;
+  >div {
+    padding: 20px;
+  }
+}
+
+.stepContent{
+  min-height: 200px;
+}
+
+.stepActions{
+  margin-top: 10px;
+  button{
+    margin-right: 10px !important;
+  }
+}
+
+.twoColumn{
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+
+.checkboxInProgress>div>div>div>div{
+    top:-13px;
+    left:-13px;
 }
