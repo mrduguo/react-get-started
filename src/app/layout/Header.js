@@ -13,7 +13,7 @@ const Logo=CSSModules(() => (
 
 const Header=() => (
   <AppBar
-    title="AIA Cloud - Starter"
+    title="AIA Platform - Starter"
     styleName='appBar'
     // iconElementLeft={<Logo/>}
     iconElementLeft={<IconButton href="/"><FileCloud/></IconButton>}

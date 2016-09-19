@@ -75,10 +75,10 @@ class LocalDeployment extends React.Component {
     }
     const buildCmd = ()=> {
       return (<div>
-        <div>docker run -d -p 80:8888</div>
-        <div>{'\u00a0\u00a0\u00a0\u00a0'}--name platform-cloud-stater</div>
-        <div>{'\u00a0\u00a0\u00a0\u00a0'}-v /data:/data</div>
-        <div>{'\u00a0\u00a0\u00a0\u00a0'}cloud-stater</div>
+        <div>docker run -d -p 80:8888\</div>
+        <div>{'\u00a0\u00a0\u00a0\u00a0'}--name platform-cloud-stater\</div>
+        <div>{'\u00a0\u00a0\u00a0\u00a0'}-v /data:/data\</div>
+        <div>{'\u00a0\u00a0\u00a0\u00a0'}cloud-stater\</div>
         <div>{'\u00a0\u00a0\u00a0\u00a0'}--host={this.state.platformHost}</div>
         <div>{'\u00a0'}</div>
       </div>)
