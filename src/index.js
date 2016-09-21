@@ -1,12 +1,55 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {Provider} from 'react-redux'
+import {createStore,applyMiddleware } from 'redux'
+import {deepOrange500} from "material-ui/styles/colors"
+import getMuiTheme from "material-ui/styles/getMuiTheme"
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import Main from './app/App'; // Our custom react component
+import thunkMiddleware from 'redux-thunk'
+import App from './app/App';
+import reducer from './reducers';
+
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
+
+function logger({ getState }) {
+    return (next) => (action) => {
+        console.log('will dispatch', action)
+
+        // Call the next dispatch method in the middleware chain.
+        let returnValue = next(action)
+
+        console.log('state after dispatch', getState())
+
+        // This will likely be the action itself, unless
+        // a middleware further in chain changed it.
+        return returnValue
+    }
+}
+
+
+const store =
+    (window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore)
+    (reducer, applyMiddleware(thunkMiddleware,logger))
+
+const muiTheme = getMuiTheme({
+    palette: {
+        accent1Color: deepOrange500,
+    },
+});
+
+
 // Render the main app react component into the app div.
 // For more details see: https://facebook.github.io/react/docs/top-level-api.html#react.render
-render(<Main />, document.getElementById('app'));
+render(
+    <Provider store={store}>
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <App/>
+        </MuiThemeProvider>
+    </Provider>,
+    document.getElementById('app')
+);

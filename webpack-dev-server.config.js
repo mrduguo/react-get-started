@@ -5,7 +5,7 @@ const config = {
   devServer: {
     contentBase: 'src/www',
     devtool: 'source-map',
-    hot: true,
+    // hot: true,
     inline: true,
     port: 3000,
     host: 'localhost', // Change to '0.0.0.0' for external facing server
@@ -23,15 +23,16 @@ const config = {
     },
   },
   entry: [
-    'webpack/hot/dev-server',
-    'webpack/hot/only-dev-server',
+    // 'webpack/hot/dev-server',
+    // 'webpack/hot/only-dev-server',
     path.join(__dirname, '/src/index.js'),
   ],
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'babel-loader'],
+        // loaders: ['react-hot', 'babel-loader'],
+        loaders: [ 'babel-loader'],
         exclude: [path.resolve(__dirname, 'node_modules')],
       }, {
         test: /\.png$/,
@@ -50,7 +51,7 @@ const config = {
     filename: 'app.js',
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],
 };
