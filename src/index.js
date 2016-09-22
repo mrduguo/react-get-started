@@ -1,5 +1,6 @@
 import React from "react";
 import {render} from "react-dom";
+import { Router, Route, hashHistory } from 'react-router';
 import {Provider} from "react-redux";
 import {createStore, applyMiddleware} from "redux";
 import {deepOrange500} from "material-ui/styles/colors";
@@ -39,7 +40,9 @@ const muiTheme = getMuiTheme({
 render(
     <Provider store={store}>
         <MuiThemeProvider muiTheme={muiTheme}>
-            <App/>
+            <Router history={hashHistory}>
+                <Route path="/(:topology)" component={App} />
+            </Router>
         </MuiThemeProvider>
     </Provider>,
     document.getElementById('app')

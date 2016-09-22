@@ -9,7 +9,7 @@ import styles from "./Deployment.scss";
 class TopologyBox extends React.Component {
     state = {
         zDepth: 1,
-        open: false,
+        open: this.props.open,
     }
 
     handleClose = () => {
@@ -38,7 +38,8 @@ class TopologyBox extends React.Component {
                             </ul>
                         </div>
                         <RaisedButton primary={true} fullWidth={true} label={actionTitle}
-                                      onTouchTap={() => this.setState({open: true})}
+                                      // onTouchTap={() => this.setState({open: true})}
+                                      href="#/cluster"
                                       icon={actionIcon}/>
                     </div>
                     <Dialog

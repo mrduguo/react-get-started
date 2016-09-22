@@ -8,7 +8,7 @@ import CloudLocal from "material-ui/svg-icons/file/cloud-download";
 import CloudRemote from "material-ui/svg-icons/file/cloud-circle";
 
 
-const Deployment = () => (
+const Deployment = ({topology}) => (
     <div>
         <h1 styleName="heading">Please choose a deployment topology<br/>to get your cloud environment started</h1>
         <div styleName="grid">
@@ -20,6 +20,7 @@ const Deployment = () => (
                 requirements={['4GB available memory','10GB free disk space']}
                 actionTitle="Run"
                 actionIcon={<CloudLocal/>}
+                open={topology=='standalone'}
             >
                 <LocalDeployment/>
             </TopologyBox>
@@ -31,6 +32,7 @@ const Deployment = () => (
                 requirements={['ssh access','python']}
                 actionTitle="Configure"
                 actionIcon={<CloudRemote/>}
+                open={topology=='cluster'}
             >
                 <RemoteDeployment/>
             </TopologyBox>
