@@ -12,7 +12,7 @@ import deploymentAction,{startingStandalone,stoppingStandalone} from "./../../..
 
 let LocalDeployment =(props)=>{
     const { dispatch,status,platformHost} = props;
-    if(status==='Unknown'){
+    if(status==='Initialling'){
         dispatch(deploymentAction('query'));
     }
 
@@ -39,12 +39,12 @@ let LocalDeployment =(props)=>{
 
         const result = ()=> {
             switch (status) {
-                case "stopped":
+                case "Stopped":
                     return (<div>
                         <h3>To run the platform at</h3>
                         <div>http://{platformHost}</div>
                     </div>);
-                case "started":
+                case "Started":
                     return (<div>
                         <h3>Platform Dashboard</h3>
                         <div>
@@ -79,10 +79,10 @@ let LocalDeployment =(props)=>{
                             {result()}
                         </div>
                         <RaisedButton styleName="deploymentButton" onTouchTap={handleStart}
-                                      disabled={status!='stopped'?true:false} primary={true}
+                                      disabled={status!='Stopped'?true:false} primary={true}
                                       label="Start" icon={<CmdStart/>}/>
                         <RaisedButton styleName="deploymentButton" onTouchTap={handleStop}
-                                      disabled={status!='started'?true:false} primary={true}
+                                      disabled={status!='Started'?true:false} primary={true}
                                       label="Stop" icon={<CmdStop/>}/>
                     </div>
                 </Tab>
@@ -101,7 +101,7 @@ let LocalDeployment =(props)=>{
 }
 
 const mapStateToProps=(state)=> {
-    const { status, serverInfo } = state.localDeploymentReducer;
+    const { status, serverInfo } = state.localDeployment;
     console.log('mapStateToProps',state);
     return {
         status,

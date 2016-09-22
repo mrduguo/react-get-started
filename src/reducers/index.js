@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import {reducer as reduxFormReducer} from 'redux-form'
-import localDeploymentReducer from './localDeploymentReducers'
+import localDeployment from './xLocalDeployment'
 
 export default combineReducers({
-    localDeploymentReducer,
+    localDeployment,
     form: reduxFormReducer,
 })

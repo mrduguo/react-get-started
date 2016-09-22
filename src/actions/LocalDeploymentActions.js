@@ -5,43 +5,38 @@ export const STARTED_STANDALONE = 'deployment/local/started'
 export const STOPPING_STANDALONE = 'deployment/local/stopping'
 export const STOPPED_STANDALONE = 'deployment/local/stopped'
 
-export function startedStandalone(serverInfo) {
-    return {
-        type: STARTED_STANDALONE,
+const action = (type, status, serverInfo)=> {
+    return serverInfo ? {
+        type: type,
         serverInfo,
-        status: 'Started',
+        status: status,
+    } : {
+        type: type,
+        status: status,
     }
 }
 
-
-export function startingStandalone() {
-    return {
-        type: STARTING_STANDALONE,
-        status: 'Starting',
-    }
-}
-export function stoppedStandalone(serverInfo) {
-    return {
-        type: STOPPED_STANDALONE,
-        status: 'Stopped',
-        serverInfo,
-        receivedAt: Date.now(),
-    }
-}
-
-export function stoppingStandalone() {
-    return {
-        type: STOPPING_STANDALONE,
-        status: 'Stopping',
-    }
-}
-
-function sendRequest(action) {
+const sendRequest = (action)=> {
     return dispatch => {
         return fetch(`/api/events?_action${action}`)
             .then(response => response.json())
-            .then(json => dispatch(action === 'stopped' ? stoppedStandalone(json) : startedStandalone(json)))
+            .then(json => dispatch(action === 'start' ? startedStandalone(json) : stoppedStandalone(json)))
     }
+}
+
+export function startedStandalone(serverInfo) {
+    return action(STARTED_STANDALONE, 'Started')
+}
+
+export function startingStandalone() {
+    return action(STARTING_STANDALONE, 'Starting')
+}
+export function stoppedStandalone(serverInfo) {
+    return action(STOPPED_STANDALONE, 'Stopped')
+}
+
+export function stoppingStandalone() {
+    return action(STOPPING_STANDALONE, 'Stopping')
 }
 
 export default function performAction(action) {
