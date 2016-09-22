@@ -1,41 +1,41 @@
-import React, {Component} from "react"
-import CSSModules from "react-css-modules"
-import styles from "./Deployment.scss"
-import TopologyBox from "./TopologyBox"
-import LocalDeployment from "./local/LocalDeployment"
-import RemoteDeployment from "./remote/RemoteDeployment"
-import CloudLocal from "material-ui/svg-icons/file/cloud-download"
-import CloudRemote from "material-ui/svg-icons/file/cloud-circle"
+import React, {Component} from "react";
+import CSSModules from "react-css-modules";
+import styles from "./Deployment.scss";
+import TopologyBox from "./TopologyBox";
+import LocalDeployment from "./local/LocalDeployment";
+import RemoteDeployment from "./remote/RemoteDeployment";
+import CloudLocal from "material-ui/svg-icons/file/cloud-download";
+import CloudRemote from "material-ui/svg-icons/file/cloud-circle";
 
 
 const Deployment = () => (
-  <div>
-    <h1 styleName="heading">Please choose a deployment topology<br/>to get your cloud environment started</h1>
-    <div styleName="grid">
-        <TopologyBox
-            heading="Local Standalone"
-            route="/standalone"
-            img="images/css-framework.svg"
-            description={(<div>Start the cloud platform on any <b>docker</b> environment to have fun.</div>)}
-            requirements={['4GB available memory','10GB free disk space']}
-            actionTitle="Run"
-            actionIcon={<CloudLocal/>}
-        >
-            <LocalDeployment/>
-        </TopologyBox>
-        <TopologyBox
-            heading="Remote Cluster"
-            route="/cluster"
-            img="images/css-framework.svg"
-            description={(<div>Deploy the platform via <b>ansible</b> to one or more linux based clusters.</div>)}
-            requirements={['ssh access','python']}
-            actionTitle="Configure"
-            actionIcon={<CloudRemote/>}
-        >
-            <RemoteDeployment/>
-        </TopologyBox>
+    <div>
+        <h1 styleName="heading">Please choose a deployment topology<br/>to get your cloud environment started</h1>
+        <div styleName="grid">
+            <TopologyBox
+                heading="Local Standalone"
+                route="/standalone"
+                img="images/css-framework.svg"
+                description={(<div>Start the cloud platform on any <b>docker</b> environment to have fun.</div>)}
+                requirements={['4GB available memory','10GB free disk space']}
+                actionTitle="Run"
+                actionIcon={<CloudLocal/>}
+            >
+                <LocalDeployment/>
+            </TopologyBox>
+            <TopologyBox
+                heading="Remote Cluster"
+                route="/cluster"
+                img="images/css-framework.svg"
+                description={(<div>Deploy the platform via <b>ansible</b> to one or more linux based clusters.</div>)}
+                requirements={['ssh access','python']}
+                actionTitle="Configure"
+                actionIcon={<CloudRemote/>}
+            >
+                <RemoteDeployment/>
+            </TopologyBox>
+        </div>
     </div>
-  </div>
 )
 
 export default CSSModules(Deployment, styles);

@@ -1,14 +1,14 @@
-import React from 'react';
-import {render} from 'react-dom';
-import {Provider} from 'react-redux'
-import {createStore,applyMiddleware } from 'redux'
-import {deepOrange500} from "material-ui/styles/colors"
-import getMuiTheme from "material-ui/styles/getMuiTheme"
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import thunkMiddleware from 'redux-thunk'
-import App from './app/App';
-import reducer from './reducers';
+import React from "react";
+import {render} from "react-dom";
+import {Provider} from "react-redux";
+import {createStore, applyMiddleware} from "redux";
+import {deepOrange500} from "material-ui/styles/colors";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import injectTapEventPlugin from "react-tap-event-plugin";
+import thunkMiddleware from "redux-thunk";
+import App from "./app/App";
+import reducer from "./reducers";
 
 
 // Needed for onTouchTap
@@ -16,7 +16,7 @@ import reducer from './reducers';
 injectTapEventPlugin();
 
 
-function logger({ getState }) {
+function logger({getState}) {
     return (next) => (action) => {
         console.log('will dispatch', action)
 
@@ -34,7 +34,7 @@ function logger({ getState }) {
 
 const store =
     (window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore)
-    (reducer, applyMiddleware(thunkMiddleware,logger))
+    (reducer, applyMiddleware(thunkMiddleware, logger))
 
 const muiTheme = getMuiTheme({
     palette: {

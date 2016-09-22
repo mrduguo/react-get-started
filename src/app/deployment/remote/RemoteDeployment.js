@@ -1,14 +1,14 @@
-import React from "react"
-import {connect} from 'react-redux'
-import {Step, Stepper, StepLabel} from "material-ui/Stepper"
-import {Field, reduxForm, reset, formValueSelector, getFormValues} from "redux-form"
-import {TextField} from "redux-form-material-ui"
-import CSSModules from "react-css-modules"
-import styles from "../Deployment.scss"
-import RemoteStep1 from "./Step1"
-import RemoteStep2 from "./Step2"
-import RemoteStep3 from "./Step3"
-import RemoteStep4 from "./Step4"
+import React from "react";
+import {connect} from "react-redux";
+import {Step, Stepper, StepLabel} from "material-ui/Stepper";
+import {Field, reduxForm, reset, formValueSelector, getFormValues} from "redux-form";
+import {TextField} from "redux-form-material-ui";
+import CSSModules from "react-css-modules";
+import styles from "../Deployment.scss";
+import RemoteStep1 from "./Step1";
+import RemoteStep2 from "./Step2";
+import RemoteStep3 from "./Step3";
+import RemoteStep4 from "./Step4";
 
 class RemoteDeployment extends React.Component {
     state = {

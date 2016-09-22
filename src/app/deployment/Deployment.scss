@@ -13,7 +13,7 @@
   max-width: 600px;
   margin: 0px auto;
   @media (max-width: 500px) {
-      max-width: 300px;
+    max-width: 300px;
   }
 }
 
@@ -67,29 +67,29 @@
   background-color: black;
   color: #c3c1bc;
   height: 100%;
-  >div {
+  > div {
     padding: 20px;
   }
 }
 
-.stepContent{
+.stepContent {
   min-height: 200px;
 }
 
-.stepActions{
+.stepActions {
   margin-top: 10px;
-  button{
+  button {
     margin-right: 10px !important;
   }
 }
 
-.twoColumn{
+.twoColumn {
   width: 50%;
   float: left;
   display: inline-block;
 }
 
-.checkboxInProgress>div>div>div>div{
-    top:-13px;
-    left:-13px;
+.checkboxInProgress > div > div > div > div {
+  top: -13px;
+  left: -13px;
 }

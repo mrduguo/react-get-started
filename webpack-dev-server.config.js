@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
+  devtool: 'source-map',
   devServer: {
     contentBase: 'src/www',
     devtool: 'source-map',

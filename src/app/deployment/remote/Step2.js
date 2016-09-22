@@ -1,16 +1,14 @@
-import React from 'react'
-import {Field, reduxForm} from 'redux-form'
-import {TextField} from "redux-form-material-ui"
-import RaisedButton from "material-ui/RaisedButton"
-import FlatButton from "material-ui/FlatButton"
-import CircularProgress from "material-ui/CircularProgress"
-import Checkbox from 'material-ui/Checkbox';
-import CSSModules from "react-css-modules"
-import styles from "../Deployment.scss"
+import React from "react";
+import {Field, reduxForm} from "redux-form";
+import {TextField} from "redux-form-material-ui";
+import RaisedButton from "material-ui/RaisedButton";
+import FlatButton from "material-ui/FlatButton";
+import CircularProgress from "material-ui/CircularProgress";
+import Checkbox from "material-ui/Checkbox";
+import CSSModules from "react-css-modules";
+import styles from "../Deployment.scss";
 
-let Step2 = (props) => {
-    const {handleSubmit, masterNodes, slaveNodes, previousPage, pristine, reset, submitting} = props
-    console.log('step 2 nodes', masterNodes, slaveNodes)
+let Step2 = ({handleSubmit, masterNodes, slaveNodes, previousPage, pristine, reset, submitting}) => {
     return (
         <form onSubmit={handleSubmit}>
             <div styleName="stepContent">

@@ -1,10 +1,10 @@
-import {combineReducers} from 'redux'
+import {combineReducers} from "redux";
 import {
     STARTING_STANDALONE,
     STARTED_STANDALONE,
     STOPPING_STANDALONE,
-    STOPPED_STANDALONE,
-} from '../actions/LocalDeploymentActions'
+    STOPPED_STANDALONE
+} from "../actions/LocalDeploymentActions";
 
 export default (state = {status: 'Initialling'}, action) => {
     switch (action.type) {

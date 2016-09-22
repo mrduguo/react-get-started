@@ -1,10 +1,10 @@
-import React, {Component, PropTypes} from 'react';
-import Paper from 'material-ui/Paper';
-import RaisedButton from "material-ui/RaisedButton"
-import FlatButton from "material-ui/FlatButton"
-import Dialog from "material-ui/Dialog"
-import CSSModules from "react-css-modules"
-import styles from "./Deployment.scss"
+import React, {Component, PropTypes} from "react";
+import Paper from "material-ui/Paper";
+import RaisedButton from "material-ui/RaisedButton";
+import FlatButton from "material-ui/FlatButton";
+import Dialog from "material-ui/Dialog";
+import CSSModules from "react-css-modules";
+import styles from "./Deployment.scss";
 
 class TopologyBox extends React.Component {
     state = {

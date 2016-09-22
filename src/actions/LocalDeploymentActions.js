@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import fetch from "isomorphic-fetch";
 
 export const STARTING_STANDALONE = 'deployment/local/starting'
 export const STARTED_STANDALONE = 'deployment/local/started'
