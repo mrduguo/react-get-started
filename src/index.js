@@ -3,6 +3,7 @@ import {render} from "react-dom";
 import { Router, Route, hashHistory } from 'react-router';
 import {Provider} from "react-redux";
 import {createStore, applyMiddleware} from "redux";
+import { syncHistoryWithStore } from 'react-router-redux'
 import {deepOrange500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
@@ -28,6 +29,8 @@ const store =
     (window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore)
     (reducer, applyMiddleware(...middlewares))
 
+const history = syncHistoryWithStore(hashHistory, store)
+
 const muiTheme = getMuiTheme({
     palette: {
         accent1Color: deepOrange500,
@@ -40,8 +43,9 @@ const muiTheme = getMuiTheme({
 render(
     <Provider store={store}>
         <MuiThemeProvider muiTheme={muiTheme}>
-            <Router history={hashHistory}>
-                <Route path="/(:topology)" component={App} />
+            <Router history={history}>
+                <Route path='/' component={App} />
+                <Route path='/:topology' component={App} />
             </Router>
         </MuiThemeProvider>
     </Provider>,

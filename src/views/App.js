@@ -5,11 +5,11 @@ import Deployment from "./deployment";
 import styles from "./App.scss";
 
 
-const App = CSSModules(({params}) => (
+const App = CSSModules(({params:{topology}}) => (
     <div>
         <Header/>
         <div styleName='content'>
-            <Deployment topology={params.topology || 'none'}/>
+            <Deployment topology={topology || 'none'}/>
         </div>
     </div>
 ), styles);

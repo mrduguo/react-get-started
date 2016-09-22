@@ -14,7 +14,7 @@ const Deployment = ({topology}) => (
         <div styleName="grid">
             <TopologyBox
                 heading="Local Standalone"
-                route="/standalone"
+                path="/standalone"
                 img="images/css-framework.svg"
                 description={(<div>Start the cloud platform on any <b>docker</b> environment to have fun.</div>)}
                 requirements={['4GB available memory','10GB free disk space']}
@@ -26,7 +26,7 @@ const Deployment = ({topology}) => (
             </TopologyBox>
             <TopologyBox
                 heading="Remote Cluster"
-                route="/cluster"
+                path="/cluster"
                 img="images/css-framework.svg"
                 description={(<div>Deploy the platform via <b>ansible</b> to one or more linux based clusters.</div>)}
                 requirements={['ssh access','python']}

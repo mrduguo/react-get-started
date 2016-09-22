@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from "react";
 import Paper from "material-ui/Paper";
+import { withRouter } from 'react-router';
 import RaisedButton from "material-ui/RaisedButton";
 import FlatButton from "material-ui/FlatButton";
 import Dialog from "material-ui/Dialog";
@@ -9,15 +10,10 @@ import styles from "./Deployment.scss";
 class TopologyBox extends React.Component {
     state = {
         zDepth: 1,
-        open: this.props.open,
     }
 
-    handleClose = () => {
-        this.setState({open: false});
-    };
-
     render() {
-        const {heading, description, requirements, actionTitle, actionIcon, children}=this.props;
+        const {heading, description, requirements, actionTitle, actionIcon, children,path,open,router}=this.props;
         return (
             <Paper
                 zDepth={this.state.zDepth}
@@ -38,8 +34,7 @@ class TopologyBox extends React.Component {
                             </ul>
                         </div>
                         <RaisedButton primary={true} fullWidth={true} label={actionTitle}
-                                      // onTouchTap={() => this.setState({open: true})}
-                                      href="#/cluster"
+                                      onTouchTap={()=>router.push(path)}
                                       icon={actionIcon}/>
                     </div>
                     <Dialog
@@ -47,12 +42,12 @@ class TopologyBox extends React.Component {
                         actions={<FlatButton
                                     label="OK"
                                     primary={true}
-                                    onTouchTap={this.handleClose}
+                                    onTouchTap={()=>router.push('/')}
                                 />
                                 }
                         modal={false}
-                        onRequestClose={this.handleClose}
-                        open={this.state.open}
+                        onRequestClose={()=>router.push('/')}
+                        open={open}
                         autoScrollBodyContent={true}
                     >
                         {children}
@@ -67,4 +62,4 @@ TopologyBox.propTypes = {
     heading: PropTypes.string.isRequired,
 }
 
-export default CSSModules(TopologyBox, styles);
+export default withRouter(CSSModules(TopologyBox, styles));
