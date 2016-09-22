@@ -47,7 +47,7 @@ const config = {
       {from: 'www'},
     ], path.resolve(__dirname, 'src')),
     new TransferWebpackPlugin([
-      {from: 'deploy'},
+      {from: 'www-production'},
     ], path.resolve(__dirname, 'src')),
   ],
   postcss: [
