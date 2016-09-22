@@ -7,7 +7,7 @@ import getMuiTheme from "material-ui/styles/getMuiTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import thunkMiddleware from "redux-thunk";
-import App from "./app/App";
+import App from "./views/App";
 import reducer from "./reducers";
 
 
@@ -15,26 +15,17 @@ import reducer from "./reducers";
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
-
-function logger({getState}) {
-    return (next) => (action) => {
-        console.log('will dispatch', action)
-
-        // Call the next dispatch method in the middleware chain.
-        let returnValue = next(action)
-
-        console.log('state after dispatch', getState())
-
-        // This will likely be the action itself, unless
-        // a middleware further in chain changed it.
-        return returnValue
-    }
+// Enable log in none debug environments
+const middlewares = [thunkMiddleware];
+if (process.env.NODE_ENV !== `production`) {
+    const createLogger = require(`redux-logger`);
+    const logger = createLogger({collapsed:true});
+    middlewares.push(logger);
 }
-
 
 const store =
     (window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore)
-    (reducer, applyMiddleware(thunkMiddleware, logger))
+    (reducer, applyMiddleware(...middlewares))
 
 const muiTheme = getMuiTheme({
     palette: {

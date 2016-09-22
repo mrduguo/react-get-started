@@ -19,7 +19,6 @@ class RemoteDeployment extends React.Component {
 
 
     handleConfig = ({masterNodes, slaveNodes}) => {
-        console.log('values', masterNodes)
         if (masterNodes) {
             let nodeStatus = []
             masterNodes.split('\n').forEach(function (ip, index) {

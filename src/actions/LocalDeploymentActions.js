@@ -18,7 +18,7 @@ const action = (type, status, serverInfo)=> {
 
 const sendRequest = (action)=> {
     return dispatch => {
-        return fetch(`/api/events?_action${action}`)
+        return fetch(`https://api.github.com/events?_action=${action}`)
             .then(response => response.json())
             .then(json => dispatch(action === 'start' ? startedStandalone(json) : stoppedStandalone(json)))
     }
@@ -41,7 +41,6 @@ export function stoppingStandalone() {
 
 export default function performAction(action) {
     return (dispatch, getState) => {
-        console.log('performAction', action)
         return dispatch(sendRequest(action))
     }
 }

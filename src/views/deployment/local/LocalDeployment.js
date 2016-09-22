@@ -18,22 +18,11 @@ let LocalDeployment = ({dispatch, status, platformHost})=> {
     const handleStart = () => {
         dispatch(startingStandalone());
         dispatch(deploymentAction('start'));
-        // this.setState({status: 'Starting'});
-        // var _this = this;
-        // axios.get('/api/events').then((data)=>{
-        //     console.log('data',data);
-        //     _this.setState({status: 'started'});
-        // })
     };
 
     const handleStop = () => {
         dispatch(stoppingStandalone());
         dispatch(deploymentAction('stop'));
-        // this.setState({status: 'Stopping'});
-        // var _this = this;
-        // setTimeout(function () {
-        //     _this.setState({status: 'stopped'});
-        // }, 3000)
     };
 
     const result = ()=> {

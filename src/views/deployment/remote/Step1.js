@@ -1,10 +1,10 @@
-import React from 'react'
-import { Field, reduxForm } from 'redux-form'
-import {TextField} from "redux-form-material-ui"
-import RaisedButton from "material-ui/RaisedButton"
-import FlatButton from "material-ui/FlatButton"
-import CSSModules from "react-css-modules"
-import styles from "../Deployment.scss"
+import React from "react";
+import {Field, reduxForm} from "redux-form";
+import {TextField} from "redux-form-material-ui";
+import RaisedButton from "material-ui/RaisedButton";
+import FlatButton from "material-ui/FlatButton";
+import CSSModules from "react-css-modules";
+import styles from "../Deployment.scss";
 
 
 const validate = values => {
@@ -16,8 +16,7 @@ const validate = values => {
 }
 
 
-let Step1 = (props) => {
-    const { handleSubmit, pristine, reset, submitting } = props
+let Step1 = ({handleSubmit, pristine, reset, submitting}) => {
     return (
         <form onSubmit={handleSubmit}>
             <div styleName="stepContent">
@@ -64,4 +63,4 @@ export default reduxForm({
     form: 'remoteCluster',
     destroyOnUnmount: false,
     validate
-})(CSSModules(Step1,styles))
+})(CSSModules(Step1, styles))
