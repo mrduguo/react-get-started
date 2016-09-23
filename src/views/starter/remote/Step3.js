@@ -4,7 +4,7 @@ import {TextField} from "redux-form-material-ui";
 import RaisedButton from "material-ui/RaisedButton";
 import FlatButton from "material-ui/FlatButton";
 import CSSModules from "react-css-modules";
-import styles from "../Deployment.scss";
+import styles from "../Starter.scss";
 
 let Step3 = ({onSubmit, masterNodes, slaveNodes, previousPage}) => {
     const buildCmd = ()=> {

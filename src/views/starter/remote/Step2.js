@@ -6,7 +6,7 @@ import FlatButton from "material-ui/FlatButton";
 import CircularProgress from "material-ui/CircularProgress";
 import Checkbox from "material-ui/Checkbox";
 import CSSModules from "react-css-modules";
-import styles from "../Deployment.scss";
+import styles from "../Starter.scss";
 
 let Step2 = ({handleSubmit, masterNodes, slaveNodes, previousPage, pristine, reset, submitting}) => {
     return (

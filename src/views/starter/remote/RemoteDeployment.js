@@ -4,7 +4,7 @@ import {Step, Stepper, StepLabel} from "material-ui/Stepper";
 import {Field, reduxForm, reset, formValueSelector, getFormValues} from "redux-form";
 import {TextField} from "redux-form-material-ui";
 import CSSModules from "react-css-modules";
-import styles from "../Deployment.scss";
+import styles from "../Starter.scss";
 import RemoteStep1 from "./Step1";
 import RemoteStep2 from "./Step2";
 import RemoteStep3 from "./Step3";

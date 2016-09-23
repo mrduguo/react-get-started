@@ -1,16 +1,19 @@
 import React from "react";
 import {render} from "react-dom";
-import { Router, Route, hashHistory } from 'react-router';
+import {Router, hashHistory} from "react-router";
 import {Provider} from "react-redux";
 import {createStore, applyMiddleware} from "redux";
-import { syncHistoryWithStore } from 'react-router-redux'
+import {syncHistoryWithStore} from "react-router-redux";
 import {deepOrange500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import thunkMiddleware from "redux-thunk";
-import App from "./views/App";
+import routes from "./views/routes";
 import reducer from "./reducers";
+import {Route, IndexRoute} from "react-router";
+import App from "./views/App";
+import Starter from "./views/starter";
 
 
 // Needed for onTouchTap
@@ -21,7 +24,7 @@ injectTapEventPlugin();
 const middlewares = [thunkMiddleware];
 if (process.env.NODE_ENV !== `production`) {
     const createLogger = require(`redux-logger`);
-    const logger = createLogger({collapsed:true});
+    const logger = createLogger({collapsed: true});
     middlewares.push(logger);
 }
 
@@ -44,8 +47,7 @@ render(
     <Provider store={store}>
         <MuiThemeProvider muiTheme={muiTheme}>
             <Router history={history}>
-                <Route path='/' component={App} />
-                <Route path='/:topology' component={App} />
+                {routes}
             </Router>
         </MuiThemeProvider>
     </Provider>,

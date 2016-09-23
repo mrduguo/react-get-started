@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import CSSModules from "react-css-modules";
-import styles from "./Deployment.scss";
+import styles from "./Starter.scss";
 import TopologyBox from "./TopologyBox";
 import LocalDeployment from "./local/LocalDeployment";
 import RemoteDeployment from "./remote/RemoteDeployment";
@@ -8,13 +8,13 @@ import CloudLocal from "material-ui/svg-icons/file/cloud-download";
 import CloudRemote from "material-ui/svg-icons/file/cloud-circle";
 
 
-const Deployment = ({topology}) => (
+const Starter = ({params:{topology}}) => (
     <div>
         <h1 styleName="heading">Please choose a deployment topology<br/>to get your cloud environment started</h1>
         <div styleName="grid">
             <TopologyBox
                 heading="Local Standalone"
-                path="/standalone"
+                path="/starter/standalone"
                 img="images/css-framework.svg"
                 description={(<div>Start the cloud platform on any <b>docker</b> environment to have fun.</div>)}
                 requirements={['4GB available memory','10GB free disk space']}
@@ -26,7 +26,7 @@ const Deployment = ({topology}) => (
             </TopologyBox>
             <TopologyBox
                 heading="Remote Cluster"
-                path="/cluster"
+                path="/starter/cluster"
                 img="images/css-framework.svg"
                 description={(<div>Deploy the platform via <b>ansible</b> to one or more linux based clusters.</div>)}
                 requirements={['ssh access','python']}
@@ -40,5 +40,5 @@ const Deployment = ({topology}) => (
     </div>
 )
 
-export default CSSModules(Deployment, styles);
+export default CSSModules(Starter, styles);
 

@@ -6,7 +6,7 @@ import CmdStart from "material-ui/svg-icons/av/play-arrow";
 import CmdStop from "material-ui/svg-icons/av/stop";
 import CircularProgress from "material-ui/CircularProgress";
 import CSSModules from "react-css-modules";
-import styles from "../Deployment.scss";
+import styles from "../Starter.scss";
 import deploymentAction, {startingStandalone, stoppingStandalone} from "./../../../actions/LocalDeploymentActions";
 
 
