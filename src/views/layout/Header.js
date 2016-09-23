@@ -11,14 +11,21 @@ const Logo = CSSModules(() => (
     <div styleName='logo'/>
 ), styles);
 
-const Header = () => (
-    <AppBar
-        title="Cloud Platform - Starter"
+const Header = ({currentPath}) => (
+    currentPath=='/starter'?(<AppBar
+        title={'Cloud Platform - Starter'}
         styleName='appBar'
         // iconElementLeft={<Logo/>}
         iconElementLeft={<IconButton href="/"><FileCloud/></IconButton>}
-        iconElementRight={<FlatButton label="Docs" href="/"/>}
-    />
+        iconElementRight={<FlatButton label="Dashboard" href="#/"/>}
+    />):(<AppBar
+        title={'Cloud Platform - Dashboard'}
+        styleName='appBar'
+        // iconElementLeft={<Logo/>}
+        iconElementLeft={<IconButton href="/"><FileCloud/></IconButton>}
+        iconElementRight={<FlatButton label="Starter" href="#/starter"/>}
+    />)
+
 )
 
 export default CSSModules(Header, styles);

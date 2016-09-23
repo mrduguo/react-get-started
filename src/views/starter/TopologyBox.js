@@ -42,7 +42,7 @@ class TopologyBox extends React.Component {
                         actions={<FlatButton
                                     label="OK"
                                     primary={true}
-                                    onTouchTap={()=>router.push('/')}
+                                    onTouchTap={()=>router.push('/starter')}
                                 />
                                 }
                         modal={false}

@@ -2,9 +2,9 @@ import React, {Component} from "react";
 import CSSModules from "react-css-modules";
 import styles from "./../starter/Starter.scss";
 
-const Dashboard = () => (
+let Dashboard = () => (
     <div>
-        <a href="#/starter">Starter</a>
+        <h3>Coming soon ...</h3>
     </div>
 )
 

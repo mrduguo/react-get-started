@@ -4,9 +4,9 @@ import Header from "./layout/Header";
 import styles from "./App.scss";
 
 
-const App = CSSModules(({children}) => (
+const App = CSSModules(({children,location:{pathname:currentPath}}) => (
     <div>
-        <Header/>
+        <Header currentPath ={currentPath }/>
         <div styleName='content'>
             {children}
         </div>
