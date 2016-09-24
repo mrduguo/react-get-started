@@ -14,6 +14,21 @@ class TopologyBox extends React.Component {
 
     render() {
         const {heading, description, requirements, actionTitle, actionIcon, children,path,open,router}=this.props;
+
+
+        let customContentStyle = {};
+        let customOverlayStyle = {};
+
+        if(window.innerWidth<415 || window.innerHeight<415){
+            customContentStyle = {
+                width: '100%',
+                maxWidth: 'none',
+            };
+            customOverlayStyle = {
+                backgroundColor: 'gray',
+            };
+        }
+
         return (
             <Paper
                 zDepth={this.state.zDepth}
@@ -49,6 +64,8 @@ class TopologyBox extends React.Component {
                         onRequestClose={()=>router.push('/')}
                         open={open}
                         autoScrollBodyContent={true}
+                        contentStyle={customContentStyle}
+                        overlayStyle={customOverlayStyle}
                     >
                         {children}
                     </Dialog>

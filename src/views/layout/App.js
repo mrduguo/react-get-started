@@ -12,6 +12,7 @@ const App = CSSModules(({children,location:{pathname:currentPath}}) => (
             {children}
         </div>
         <Footer currentPath ={currentPath }/>
+        <div className="react-loaded"/>
     </div>
 ), styles);
 
