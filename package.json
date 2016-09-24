@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "material-ui": "^0.15.0",
+    "material-ui": "^0.15.4",
     "react": "^15.0.1",
     "react-css-modules": "^3.7.4",
     "react-dom": "^15.0.1",

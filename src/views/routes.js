@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Route, IndexRoute} from "react-router";
-import App from "./App";
+import App from "./layout/App";
 import Starter from "./starter";
 import Dashboard from "./dashboard";
 

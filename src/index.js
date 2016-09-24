@@ -11,9 +11,6 @@ import injectTapEventPlugin from "react-tap-event-plugin";
 import thunkMiddleware from "redux-thunk";
 import routes from "./views/routes";
 import reducer from "./reducers";
-import {Route, IndexRoute} from "react-router";
-import App from "./views/App";
-import Starter from "./views/starter";
 
 
 // Needed for onTouchTap
