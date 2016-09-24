@@ -11,7 +11,8 @@
 
 .grid {
   max-width: 600px;
-  margin: 0px auto;
+  margin: 0px auto 70px auto;
+  overflow: auto;
   @media (max-width: 500px) {
     max-width: 300px;
   }

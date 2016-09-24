@@ -61,7 +61,7 @@ let LocalDeployment = ({dispatch, status, platformHost})=> {
 
     return (
         <Tabs>
-            <Tab label="One Click To Start">
+            <Tab label="Click To Start">
                 <div styleName="localTab">
                     <div styleName="localResult">
                         {result()}
