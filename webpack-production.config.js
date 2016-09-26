@@ -10,6 +10,7 @@ const config = {
   entry: [path.join(__dirname, '/src/index.js')],
   module: {
     loaders: [
+      {test: /\.json$/, loader: 'json'},
       {
         test: /\.js$/,
         loaders: ['babel-loader'],

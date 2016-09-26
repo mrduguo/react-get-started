@@ -1,0 +1,45 @@
+.buttonAdd,.buttonDelete,.buttonDeploy,.buttonUndeploy {
+  margin: 0px;
+  top: auto;
+  left: auto;
+  position: fixed;
+  z-index: 200;
+  right: 20px;
+  bottom: 78px;
+}
+
+.buttonAdd {
+  right: 10px;
+  bottom: 70px;
+}
+
+.buttonDelete {
+  right: 80px;
+}
+
+.buttonUndeploy {
+  right: 130px;
+}
+
+.buttonDeploy {
+  right: 180px;
+}
+
+
+.prevent-cell-click {
+  position: relative
+}
+
+.prevent-cell-click-wrapper:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.status{
+  float:left;
+  padding-top:15px;
+}

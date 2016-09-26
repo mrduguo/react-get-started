@@ -7,16 +7,18 @@ import styles from "./Header.scss"
 
 const selectedTitle = (currentPath)=> {
   switch (currentPath) {
+    case "/apps":
+      return ' - Apps';
     case "/starter":
-      return 'Starter';
+      return ' - Starter';
     default:
-      return 'Apps';
+      return '';
   }
 }
 
 const Header = ({currentPath}) => (
   <AppBar
-    title={`Cloud Platform - ${selectedTitle(currentPath)}`}
+    title={`Cloud Platform${selectedTitle(currentPath)}`}
     styleName='appBar'
     iconElementLeft={<IconButton href="#"><FileCloud/></IconButton>}
   />

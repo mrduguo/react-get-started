@@ -11,9 +11,12 @@
   },
   "private": true,
   "dependencies": {
+    "d3-random": "^1.0.1",
+    "json-loader": "^0.5.4",
     "material-ui": "^0.15.4",
     "react": "^15.0.1",
     "react-css-modules": "^3.7.4",
+    "react-d3-tooltip": "^1.4.14",
     "react-dom": "^15.0.1",
     "react-tap-event-plugin": "^1.0.0"
   },
@@ -57,9 +60,16 @@
     "webpack-dev-server": "^1.14.0"
   },
   "babel": {
-    "presets": ["react", "es2015", "stage-1"],
+    "presets": [
+      "react",
+      "es2015",
+      "stage-1"
+    ],
     "plugins": [
-      ["transform-replace-object-assign", "simple-assign"]
+      [
+        "transform-replace-object-assign",
+        "simple-assign"
+      ]
     ],
     "env": {
       "docs-production": {
@@ -67,7 +77,10 @@
           "transform-react-remove-prop-types",
           "transform-react-constant-elements",
           "transform-react-inline-elements",
-          ["transform-replace-object-assign", "simple-assign"]
+          [
+            "transform-replace-object-assign",
+            "simple-assign"
+          ]
         ]
       }
     }

@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import {withRouter} from "react-router"
+import DashboardIcon from "material-ui/svg-icons/action/dashboard"
 import AppsIcon from "material-ui/svg-icons/navigation/apps"
 import StarterIcon from "material-ui/svg-icons/av/add-to-queue"
 import {BottomNavigation, BottomNavigationItem} from "material-ui/BottomNavigation"
@@ -9,8 +10,10 @@ import styles from "./Footer.scss"
 
 const selectedIndex = (currentPath)=> {
   switch (currentPath) {
-    case "/starter":
+    case "/apps":
       return 1;
+    case "/starter":
+      return 2;
     default:
       return 0;
   }
@@ -19,9 +22,14 @@ const selectedIndex = (currentPath)=> {
 const Footer = ({currentPath, router}) => (
   <BottomNavigation styleName="footer" selectedIndex={selectedIndex(currentPath)}>
     <BottomNavigationItem
+      label="Dashboard"
+      icon={<DashboardIcon/>}
+      onTouchTap={()=>router.push('/')}
+    />
+    <BottomNavigationItem
       label="Apps"
       icon={<AppsIcon/>}
-      onTouchTap={()=>router.push('/')}
+      onTouchTap={()=>router.push('/apps')}
     />
     <BottomNavigationItem
       label="Starter"
