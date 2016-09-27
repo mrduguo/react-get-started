@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import CSSModules from "react-css-modules";
 import styles from "./Dashboard.scss";
 import {LineTooltip,SimpleTooltip} from 'react-d3-tooltip';
-import D3  from 'd3';
+import d3  from 'd3';
 import {randomNormal as D3RandomNormal} from 'd3-random';
 import generalChartData from './user.json'
 // var generalChartData2 = require('json!./user.json');
@@ -21,24 +21,12 @@ var chartSeries = [
 
 var n = 40,
     random = D3RandomNormal(0, 0.2),
-    data = D3.range(n).map(index=>{
-        return{index:index,age:random()}
+    data = d3.range(n).map(index=>{
+        return{index:index,age:Math.random() * 100}
     });
 
 
 class Dashboard extends React.Component {
-    constructor(props){
-        super(props);
-        console.log(props);
-        console.log(this);
-        var _this=this;
-        setInterval(function() {
-            seq++;
-            data.shift();
-            data.push({index: n+seq, age: random()})
-            _this.setState({data: data});
-        },1000);
-    }
     state = {
         width: 600,
         height: 400,
