@@ -9,7 +9,7 @@ const config = {
         // hot: true,
         inline: true,
         port: 3000,
-        host: 'localhost', // Change to '0.0.0.0' for external facing server
+        host: '0.0.0.0', // Change to '0.0.0.0' for external facing server
         proxy: {
             "/api": {
                 "target": {

@@ -28,39 +28,16 @@ var n = 40,
 
 
 class Dashboard extends React.Component {
-    state = {
-        width: 600,
-        height: 400,
-        series: chartSeries,
-        data: data,
-    };
-
-    onClick=()=>{
-        this.setState({
-            width: this.state.width === 600? 400: 600,
-            height: this.state.width === 600? 600: 400,
-            series: this.state.width === 600? [
-                {
-                    field: 'age',
-                    name: 'Age',
-                    color: 'blue'
-                }
-            ]: chartSeries
-        })
-
-    }
-
-
     render() {
+        var width=window.innerWidth;
         return (
             <div>
-                <button onClick={this.onClick}>toggle</button>
-                <ChartRealTime width={1000} height={300}/>
+                <ChartRealTime width={width}/>
                 <LineTooltip
-                    width= {this.state.width}
-                    height= {this.state.height}
-                    data= {this.state.data}
-                    chartSeries= {this.state.series}
+                    width= {width}
+                    height= {400}
+                    data= {data}
+                    chartSeries= {chartSeries}
                     x= {x}
                 >
                     <SimpleTooltip/>
