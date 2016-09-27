@@ -3,6 +3,7 @@ import CSSModules from "react-css-modules";
 import styles from "./Dashboard.scss";
 import {LineTooltip,SimpleTooltip} from 'react-d3-tooltip';
 import d3  from 'd3';
+import ChartRealTime   from './ChartRealTime';
 import {randomNormal as D3RandomNormal} from 'd3-random';
 import generalChartData from './user.json'
 // var generalChartData2 = require('json!./user.json');
@@ -54,6 +55,7 @@ class Dashboard extends React.Component {
         return (
             <div>
                 <button onClick={this.onClick}>toggle</button>
+                <ChartRealTime width={1000} height={300}/>
                 <LineTooltip
                     width= {this.state.width}
                     height= {this.state.height}

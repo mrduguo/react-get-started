@@ -43,3 +43,33 @@
   float:left;
   padding-top:15px;
 }
+
+
+.realtime-line {
+  width: 540px;
+  height: 540px;
+
+  :global .axis {
+    stroke-width: 1;
+
+    :global .tick {
+      line {
+        stroke: black;
+      }
+      text {
+        fill: black;
+        font-size: 0.7em;
+      }
+    }
+    :global .domain {
+      fill: none;
+      stroke: black;
+    }
+  }
+
+  :global .group {
+    fill: none;
+    stroke: black;
+    stroke-width: 1.5;
+  }
+}
