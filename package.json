@@ -18,7 +18,8 @@
     "react-css-modules": "^3.7.4",
     "react-d3-tooltip": "^1.4.14",
     "react-dom": "^15.0.1",
-    "react-tap-event-plugin": "^1.0.0"
+    "react-tap-event-plugin": "^1.0.0",
+    "smoothie": "^1.27.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
