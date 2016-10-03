@@ -10,10 +10,10 @@ import styles from "./Footer.scss"
 
 const selectedIndex = (currentPath)=> {
   switch (currentPath) {
-    case "/apps":
-      return 1;
     case "/starter":
       return 2;
+    case "/apps":
+      return 1;
     default:
       return 0;
   }

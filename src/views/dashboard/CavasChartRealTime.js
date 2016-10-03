@@ -510,7 +510,7 @@ function renderCavas (windowWidth, holder) {
   var timeline = new SmoothieChart({
     millisPerPixel: 20,
     grid: {strokeStyle: '#555555', lineWidth: 1, millisPerLine: 5000, verticalSections: 5},
-    timestampFormatter:SmoothieChart.timeFormatter,
+    timestampFormatter: SmoothieChart.timeFormatter,
   });
   for (var i = 0; i < cpuDataSets.length; i++) {
     timeline.addTimeSeries(cpuDataSets[i], seriesOptions[i]);
