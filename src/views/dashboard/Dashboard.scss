@@ -1,58 +1,25 @@
-.buttonAdd, .buttonDelete, .buttonDeploy, .buttonUndeploy {
-  margin: 0px;
-  top: auto;
-  left: auto;
-  position: fixed;
-  z-index: 200;
-  right: 20px;
-  bottom: 78px;
+
+.sectionTitle{
+  color:lightgray;
+  margin:10px;
+  padding:10px;
 }
 
-.buttonAdd {
-  right: 10px;
-  bottom: 70px;
-}
-
-.buttonDelete {
-  right: 80px;
-}
-
-.buttonUndeploy {
-  right: 130px;
-}
-
-.buttonDeploy {
-  right: 180px;
-}
-
-.prevent-cell-click {
-  position: relative
-}
-
-.prevent-cell-click-wrapper:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-.status {
-  float: left;
-  padding-top: 15px;
+.darkBackgroud{
+  background-color: lightgray;
+  .sectionTitle{
+    color:white;
+  }
 }
 
 .realtime-line {
-  width: 540px;
-  height: 540px;
-
   :global .axis {
     stroke-width: 1;
 
     :global .tick {
       line {
         stroke: black;
+        stroke-width: 0.2;
       }
       text {
         fill: black;
@@ -62,6 +29,7 @@
     :global .domain {
       fill: none;
       stroke: black;
+      stroke-width: 0.2;
     }
   }
 
@@ -97,4 +65,172 @@
     }
   }
 
+}
+
+.eventsOverTimeLegend span{
+  display: block;
+  float:right;
+  width:50px;
+  height:20px;
+  font-size:10px;
+  text-align: center;
+  margin:5px;
+}
+
+.usersOverTime{
+  :global .custom_padding{
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+
+  }
+
+  :global .card{
+    height: 125px;
+    border-radius: 2px;
+    font-weight: 300;
+  }
+
+  :global .bg{
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius:4px;
+    height: 350px;
+  }
+
+
+  :global .shadow {
+    -webkit-filter: drop-shadow( 0px 2px 2px rgba(0,0,0,.3) );
+    filter: drop-shadow( 0px 2px 2px rgba(0,0,0,.3) );
+  }
+
+  :global .hr-custom {
+    border: 0;
+    height: 1px;
+    background-color: rgba(100, 100, 100, 0.2);
+    margin-bottom: 10px !important;
+    -background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(100, 100, 100, 0.5), rgba(0, 0, 0, 0));
+  }
+
+  :global .panel-header
+  {
+    height:50px;
+    background-color: #f4f4f4;
+    border-radius: 2px 2px 0 0;
+    border-bottom: 1px solid #dbdbdb;
+    padding:10px 20px 10px 20px;
+    margin-bottom: 20px;
+  }
+
+  :global .range-custom{
+    padding-bottom: 10px;
+    padding-left: 5px;
+  }
+
+  :global .range-custom-child{
+    line-height:30px;
+  }
+
+  :global .range-span{
+    color:#7f7f85;
+    padding-right:10px;
+  }
+
+  :global .padding-left-5{
+    padding-left: 5px;
+  }
+
+  :global .card_header {
+    padding: 10px 10px 5px 10px;
+    color: #ffffff;
+  }
+
+  :global .card_body{
+    text-align: center;
+    color:#ffffff;
+    font-size: 3em;
+    font-weight: 400;
+  }
+
+  :global .panel-title{
+    color:#6e6e74;
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+
+  :global .line-height-30{
+    line-height: 30px;
+  }
+
+  :global .margin-below-20{
+    margin-bottom: 20px;
+  }
+
+
+
+  :global .line {
+    fill: none;
+    stroke: #53c79f;
+    stroke-width: 3px;
+
+
+  }
+
+  :global .axis {
+    fill: #a3a3a7;
+  }
+
+
+  :global .axis path,
+  :global .axis line {
+    fill: none;
+    stroke: #ececed;
+    shape-rendering: crispEdges;
+
+  }
+
+  :global .axis text {
+    font-size: 12px;
+  }
+
+  :global .y-grid .tick{
+    stroke: #ececed;
+    opacity: 1;
+  }
+
+  :global .y-grid path,
+  :global .y-grid line {
+    fill: none;
+    stroke: #ececed;
+    shape-rendering: crispEdges;
+    opacity: 1;
+
+  }
+
+  :global .dot{
+    fill:#FFFFFF;
+    stroke:#53c79f;
+    stroke-width:2px;
+
+  }
+
+  :global .area{
+    opacity: .9    ;
+    stroke: #fff;
+    stroke-width:2px;
+  }
+
+  :global .tooltip-bg{
+    fill:#000;
+    opacity:0.7;
+  }
+
+  :global .tooltip-text1{
+    font-size:15px;
+    fill:#ffffff;
+  }
+
+  :global .tooltip-text2{
+    font-size:20px;
+    fill:#a9f3ff;
+  }
 }

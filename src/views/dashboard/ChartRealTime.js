@@ -478,7 +478,7 @@ function renderChart(windowWidth,holder) {
               .call(charts[i]);
         });
         vari++;
-        console.log('transition triggered',vari);
+        // console.log('transition triggered',vari);
     };
 
     setInterval(transition, duration)
@@ -501,7 +501,10 @@ class ChartRealTime extends React.Component {
 
     render() {
         return (
-            <div styleName="realtime-line"  ref={(ref) => this.graph = ref}></div>
+            <div>
+                <h2 styleName="sectionTitle">Real Time</h2>
+                <div styleName="realtime-line"  ref={(ref) => this.graph = ref}></div>
+            </div>
         );
     }
 }
