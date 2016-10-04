@@ -5,15 +5,15 @@ import Footer from "./Footer"
 import styles from "./Layout.scss"
 
 
-const Layout = CSSModules(({children, location:{pathname:currentPath}}) => (
+const Layout = ({children, location:{pathname:currentPath}}) => (
   <div>
-    <Header currentPath={currentPath }/>
+    <Header currentPath={currentPath}/>
     <div styleName='content'>
       {children}
     </div>
-    <Footer currentPath={currentPath }/>
+    <Footer currentPath={currentPath}/>
     <div className="react-loaded"/>
   </div>
-), styles);
+);
 
-export default Layout;
+export default CSSModules(Layout, styles);

@@ -15,10 +15,6 @@
 
  ./gradlew
 
- ./gradlew -x test
-
- ./gradlew -Dtest.single=MyTest
-
  ./gradlew run
 
 

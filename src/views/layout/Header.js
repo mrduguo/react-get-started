@@ -20,7 +20,11 @@ const Header = ({currentPath}) => (
   <AppBar
     title={`Cloud Platform${selectedTitle(currentPath)}`}
     styleName='appBar'
-    iconElementLeft={<IconButton href="#"><FileCloud/></IconButton>}
+    iconElementLeft={(
+      <IconButton href="#">
+        <FileCloud/>
+      </IconButton>
+    )}
   />
 )
 

@@ -20,7 +20,9 @@ const selectedIndex = (currentPath)=> {
 }
 
 const Footer = ({currentPath, router}) => (
-  <BottomNavigation styleName="footer" selectedIndex={selectedIndex(currentPath)}>
+  <BottomNavigation
+    styleName="footer"
+    selectedIndex={selectedIndex(currentPath)}>
     <BottomNavigationItem
       label="Dashboard"
       icon={<DashboardIcon/>}
