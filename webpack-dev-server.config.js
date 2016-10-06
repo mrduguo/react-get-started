@@ -2,11 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
-    devtool: 'source-map',
+    devtool: 'eval',
     devServer: {
         contentBase: 'src/www',
-        devtool: 'source-map',
-        // hot: true,
+        devtool: 'eval',
+        hot: true,
         inline: true,
         port: 3000,
         host: '0.0.0.0', // Change to '0.0.0.0' for external facing server
@@ -24,28 +24,32 @@ const config = {
         },
     },
     entry: [
-        // 'webpack/hot/dev-server',
-        // 'webpack/hot/only-dev-server',
+        'react-hot-loader/patch',
         path.join(__dirname, '/src/index.js'),
     ],
     module: {
         loaders: [
-            {test: /\.json$/, loader: 'json'},
             {
                 test: /\.js$/,
-                // loaders: ['react-hot', 'babel-loader'],
-                loaders: ['babel-loader'],
+                loaders: ['react-hot-loader/webpack', 'babel-loader'],
                 exclude: [path.resolve(__dirname, 'node_modules')],
-            }, {
+            },
+            {
+                test: /(\.scss|\.css)$/,
+                loaders: ['react-hot-loader/webpack', 'style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]_[hash:base64:5]!postcss!sass?sourceMap']
+            },
+            {
+                test: /\.json$/, 
+                loader: 'json'
+            },
+            {
                 test: /\.png$/,
                 loader: "url-loader?limit=1000000"
-            }, {
+            },
+            {
                 test: /\.(eot|ttf|woff(2)?)/,
                 loader: 'file-loader'
-            }, {
-                test: /(\.scss|\.css)$/,
-                loaders: ['style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]_[hash:base64:5]!postcss!sass?sourceMap']
-            },
+            }, 
         ],
     },
     output: {
@@ -53,7 +57,7 @@ const config = {
         filename: 'app.js',
     },
     plugins: [
-        // new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
     ],
 };
