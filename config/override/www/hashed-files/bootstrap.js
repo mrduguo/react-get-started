@@ -95,18 +95,19 @@ function onAppLoaded (errorMessage) {
       }
       scripts.forEach(function (src) {
         if (!src) return;
+        var href=src.startsWith('http')?src:rootPath+src;
         if (/\/css|\.css/.test(src)) {
           // Load CSS
           el = document.createElement('link');
           el.rel = "stylesheet";
-          el.href = rootPath+src;
+          el.href = href;
           el.type = "text/css";
         } else {
           // Load javascript
           el = document.createElement('script');
           el.charset = "UTF-8";
           el.type = 'text/javascript';
-          el.src = rootPath+src;
+          el.src = href;
           el.async = false;
         }
         head.appendChild(el);
@@ -123,7 +124,12 @@ function onAppLoaded (errorMessage) {
 
 //---------------------------------------------------------------------
   window.bootstrapLoadManifest = function (source, callback, onError) {
-    var url = document.querySelector('script[manifest]').getAttribute('manifest');
+    var script = document.querySelector('script[manifest]');
+    var pathRoot = script.getAttribute('root');
+    if(!pathRoot){
+      pathRoot='';
+    }
+    var url = pathRoot+script.getAttribute('manifest');
     pegasus(url + '?s=' + source + '&s=' + Date.now()).then(callback, onError);
   };
 
