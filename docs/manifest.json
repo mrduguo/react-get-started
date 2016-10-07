@@ -1,8 +1,8 @@
 {
   "load": [
     "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
-    "app.css",
-    "app.js"
+    "hashed-files/71a3eafdb976a2ba270f69d2fa5f9f85.css",
+    "hashed-files/4e47f9bf40c03fdf441065c1ef079668.js"
   ],
-  "version": "3"
+  "version": "161007-170312-2395d3e"
 }

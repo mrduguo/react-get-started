@@ -1,0 +1,8 @@
+{
+  "load": [
+    "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
+    "hashed-files/app.css",
+    "hashed-files/app.js"
+  ],
+  "version": "VERSION"
+}
