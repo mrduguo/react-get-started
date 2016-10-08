@@ -1,8 +1,0 @@
-{
-  "load": [
-    "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
-    "../../hashed-files/90cfff2b3e794adba088277063fea3d0.css",
-    "../../hashed-files/7f6d7694c298dfeb3b40be0849a1bf8a.js"
-  ],
-  "version": "161007-233204-25e696c"
-}
