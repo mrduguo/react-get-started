@@ -4,7 +4,7 @@
   },
   "scripts": {
     "build": "webpack --config config/webpack-production.config.js --progress --colors",
-    "run": "webpack-dev-server --config config/webpack-dev-server.config.js --progress --inline --colors"
+    "start": "webpack-dev-server --config config/webpack-dev-server.config.js --progress --inline --colors"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
