@@ -15,7 +15,7 @@ var moment = require('moment')
 
 const config = {
   devtool: 'source-map',
-  entry: [path.join(rootPath, 'src/index.js')],
+  entry: [path.join(rootPath, 'src/index-production.js')],
   module: {
     loaders: [
       {test: /\.json$/, loader: 'json'},

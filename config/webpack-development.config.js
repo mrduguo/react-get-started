@@ -26,7 +26,7 @@ const config = {
     },
     entry: [
         'react-hot-loader/patch',
-        path.join(rootPath, 'src/index.js'),
+        path.join(rootPath, 'src/index-development.js'),
     ],
     module: {
         loaders: [
