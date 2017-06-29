@@ -5,6 +5,7 @@ import moment from "moment"
 import styles from "./Dashboard.scss"
 import d3 from "d3"
 import {randomNormal as D3RandomNormal} from "d3-random"
+import createReactClass from 'create-react-class';
 //https://codepen.io/adeveloperdiary/pen/MyrWPd
 
 var seq = 0;
@@ -26,7 +27,7 @@ var n = 40,
   });
 
 
-var D3Gradient = React.createClass({
+var D3Gradient = createReactClass({
 
   propTypes: {
     id: React.PropTypes.string,
@@ -79,7 +80,7 @@ var resizeMixin = {
   }
 };
 
-var D3Axis = React.createClass({
+var D3Axis = createReactClass({
   propTypes: {
     h: React.PropTypes.number,
     scale: React.PropTypes.func,
@@ -126,7 +127,7 @@ var D3Axis = React.createClass({
 });
 
 
-var D3Grid = React.createClass({
+var D3Grid = createReactClass({
   propTypes: {
     h: React.PropTypes.number,
     len: React.PropTypes.number,
@@ -167,7 +168,7 @@ var D3Grid = React.createClass({
 });
 
 
-var D3ToolTip = React.createClass({
+var D3ToolTip = createReactClass({
   propTypes: {
     tooltip: React.PropTypes.object,
     bgStyle: React.PropTypes.string,
@@ -224,7 +225,7 @@ var D3ToolTip = React.createClass({
 });
 
 
-var D3Dots = React.createClass({
+var D3Dots = createReactClass({
   propTypes: {
     data: React.PropTypes.array,
     xData: React.PropTypes.string.isRequired,
@@ -271,7 +272,7 @@ var D3Dots = React.createClass({
 });
 
 
-var D3TimeLineChart = React.createClass({
+var D3TimeLineChart = createReactClass({
 
   propTypes: {
     width: React.PropTypes.number,
@@ -486,7 +487,7 @@ var D3TimeLineChart = React.createClass({
 });
 
 
-var Panel = React.createClass({
+var Panel = createReactClass({
   render: function () {
     return (
       <div className="bg">
@@ -497,7 +498,7 @@ var Panel = React.createClass({
 });
 
 
-var MainContainer = React.createClass({
+var MainContainer = createReactClass({
   render: function () {
 
     var data = [];
